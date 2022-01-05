@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Messages notification client
+    </title>
+</head>
+<body>
+<script>
+    // <1>
+
+    var socket = new WebSocket('ws://localhost:8081/msg/ws/messages?id=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXR1c2lha0BtYWlsLmNvbSIsImlkIjo0Miwicm9sZSI6IlVTRVIiLCJpc1ByZW1pdW0iOmZhbHNlLCJpYXQiOjE2Mzg1NzE5ODMsImV4cCI6MTYzODU3Mzc4M30.ymTsa1587SPCI9xwiMPzbDPVTHNZICozguE2pCk0cG4')
+    // <2>
+    socket.addEventListener('message', function (event) {
+        window.alert('message from server: ' + event.data);
+    });
+</script>
+</body>
+</html>
